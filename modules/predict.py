@@ -42,7 +42,7 @@ def predict_digit(path_img):
 
     # get coordinates of bounding digit box
     tmp, imgBi = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY_INV)
-    tmp, contours, hierarchy = cv2.findContours(imgBi, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, hierarchy = cv2.findContours(imgBi, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
     bounding_boxes = [cv2.boundingRect(cnt) for cnt in contours]
     x, y, w, h = bounding_boxes[0]
 
