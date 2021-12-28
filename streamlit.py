@@ -3,7 +3,7 @@ import pandas as pd
 import numpy as np
 import os
 from PIL import Image
-from predict import predict_digit
+from modules.predict import predict_digit
 
 def load_image(image_file):
 	img = Image.open(image_file)
