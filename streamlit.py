@@ -15,6 +15,9 @@ choice = "Image"
 if choice == "Image":
 
     st.subheader("Image")
+    st.caption('Trang web này giúp bạn dự đoán chữ số viết tay với độ chính xác tương đối :)))')
+    st.caption('Bạn hãy vẽ một bức ảnh bằng paint hoặc bất kì app vẽ nào khác nhưng lưu ý ảnh chỉ có một chữ và nền thôi nhé, đừng vẽ thêm những thứ khác')
+    st.caption('Sau đó lưu lại và upload vào đây nhé!!!')
     image_file = st.file_uploader("Upload Images",
                                   type=["png", "jpg", "jpeg"])
 
