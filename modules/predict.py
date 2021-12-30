@@ -15,7 +15,7 @@ def resize_image(img, size=(28,28), border = 0.7857):
     dif = h if h > w else w
     dif = int(dif // border)
 
-    interpolation = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
+    mode = cv2.INTER_AREA if dif > (size[0]+size[1])//2 else cv2.INTER_CUBIC
 
     x_pos = (dif - w)//2
     y_pos = (dif - h)//2
@@ -27,7 +27,7 @@ def resize_image(img, size=(28,28), border = 0.7857):
         mask = np.multiply(np.ones((dif, dif, c), dtype=img.dtype), 255.0)
         mask[y_pos:y_pos+h, x_pos:x_pos+w, :] = img[:h, :w, :]
 
-    return cv2.resize(mask, size, interpolation)
+    return cv2.resize(mask, size, mode)
 
 
 def predict_digit(path_img):
@@ -42,7 +42,7 @@ def predict_digit(path_img):
 
     # get coordinates of bounding digit box
     tmp, imgBi = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY_INV)
-    contours, hierarchy = cv2.findContours(imgBi, cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_NONE)
+    contours, hierarchy = cv2.findContours(imgBi, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     bounding_boxes = [cv2.boundingRect(cnt) for cnt in contours]
     x, y, w, h = bounding_boxes[0]
 
