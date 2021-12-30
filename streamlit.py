@@ -33,7 +33,7 @@ if choice == "Image":
             f.write((image_file).getbuffer())
 
         st.success("File Saved")
-        num, acc = predict_digit(os.path.join("fileDir", image_file.name))
-        st.write("Số bạn đã vẽ là: ", num)
-        st.write("Độ chính xác: ", acc)
+        num = predict_digit(os.path.join("fileDir", image_file.name))
+        st.write("Số bạn đã vẽ là: ", str([i[0] for i in num]))
+        st.write("Độ chính xác: ", str(i[1] for i in num))
 

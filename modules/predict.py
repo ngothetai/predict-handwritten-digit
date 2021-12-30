@@ -44,28 +44,31 @@ def predict_digit(path_img):
     tmp, imgBi = cv2.threshold(img, 50, 255, cv2.THRESH_BINARY_INV)
     contours, hierarchy = cv2.findContours(imgBi, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
     bounding_boxes = [cv2.boundingRect(cnt) for cnt in contours]
-    x, y, w, h = bounding_boxes[0]
+
+    list_num = list()
+    for i in bounding_boxes:
+        x, y, w, h = bounding_boxes[0]
+
+        # Crop image with bounding digit box
+        cropImg = img[y:y+h, x:x+w]
+
+        # Resize image (28,28)
+        # cropImg = cv2.resize(cropImg, (28, 28), interpolation = cv2.INTER_LINEAR)
+        cropImg = resize_image(cropImg, (28, 28))
 
 
-    # Crop image with bounding digit box
-    cropImg = img[y:y+h, x:x+w]
+        img = np.array(cropImg)
+        img = img.reshape(1, 28, 28, 1)
+        img = img / 255.0
 
-    # Resize image (28,28)
-    # cropImg = cv2.resize(cropImg, (28, 28), interpolation = cv2.INTER_LINEAR)
-    cropImg = resize_image(cropImg, (28, 28))
+        # convert image to black background
+        one = np.ones((1, 28, 28, 1), dtype=float)
+        img = one - img
+        # plt.imshow(img.reshape(28,28), cmap='gray')
+        # plt.show()
 
-
-    img = np.array(cropImg)
-    img = img.reshape(1, 28, 28, 1)
-    img = img / 255.0
-
-    # convert image to black background
-    one = np.ones((1, 28, 28, 1), dtype=float)
-    img = one - img
-    # plt.imshow(img.reshape(28,28), cmap='gray')
-    # plt.show()
-
-    # predicting the class
-    res = model.predict([img])[0]
-    return np.argmax(res), max(res)
+        # predicting the class
+        res = model.predict([img])[0]
+        list_num.append(np.argmax(res), max(res))
+    return list_num
 
