@@ -69,6 +69,6 @@ def predict_digit(path_img):
 
         # predicting the class
         res = model.predict([img])[0]
-        list_num.append(np.argmax(res), max(res))
+        list_num.append([np.argmax(res), max(res)])
     return list_num
 
