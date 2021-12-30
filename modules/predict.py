@@ -57,19 +57,18 @@ def predict_digit(path_img):
         # cropImg = cv2.resize(cropImg, (28, 28), interpolation = cv2.INTER_LINEAR)
         cropImg = resize_image(cropImg, (28, 28))
 
-
-        img = np.array(cropImg)
-        img = img.reshape(1, 28, 28, 1)
-        img = img / 255.0
+        new_img = np.array(cropImg)
+        new_img = new_img.reshape(1, 28, 28, 1)
+        new_img = new_img / 255.0
 
         # convert image to black background
         one = np.ones((1, 28, 28, 1), dtype=float)
-        img = one - img
+        new_img = one - new_img
         # plt.imshow(img.reshape(28,28), cmap='gray')
         # plt.show()
 
         # predicting the class
-        res = model.predict([img])[0]
+        res = model.predict([new_img])[0]
         list_num.append([np.argmax(res), max(res)])
     return list_num
 
