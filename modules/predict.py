@@ -47,7 +47,7 @@ def predict_digit(path_img):
 
     list_num = list()
     for i in bounding_boxes:
-        x, y, w, h = bounding_boxes[0]
+        x, y, w, h = i
 
         cropImg = img.copy()
         # Crop image with bounding digit box
