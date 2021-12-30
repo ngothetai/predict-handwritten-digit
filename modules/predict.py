@@ -49,8 +49,9 @@ def predict_digit(path_img):
     for i in bounding_boxes:
         x, y, w, h = bounding_boxes[0]
 
+        cropImg = img.copy()
         # Crop image with bounding digit box
-        cropImg = img[y:y+h, x:x+w]
+        cropImg = cropImg[y:y+h, x:x+w]
 
         # Resize image (28,28)
         # cropImg = cv2.resize(cropImg, (28, 28), interpolation = cv2.INTER_LINEAR)
