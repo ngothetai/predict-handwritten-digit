@@ -35,5 +35,5 @@ if choice == "Image":
         st.success("File Saved")
         num = predict_digit(os.path.join("fileDir", image_file.name))
         st.write("Số bạn đã vẽ là: ", str([i[0] for i in num]))
-        st.write("Độ chính xác: ", str(i[1] for i in num))
+        st.write("Độ chính xác: ", str([i[1] for i in num]))
 
