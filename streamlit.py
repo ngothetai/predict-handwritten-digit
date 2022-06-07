@@ -33,6 +33,6 @@ if choice == "Image":
 
         st.success("File Saved")
         num = predict_digit(os.path.join("fileDir", image_file.name))
-        st.write("Các số bạn đã vẽ là (Linkuka): ", ", ".join([str(i[0]) for i in num]))
+        st.write("Các số bạn đã vẽ là: ", ", ".join([str(i[0]) for i in num]))
         st.write("Độ chính xác tương ứng là: ", ", ".join([ str(round(i[1]*100.0, 2)) for i in num]))
 
