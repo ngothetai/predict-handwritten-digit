@@ -9,3 +9,5 @@ B6: Nhập lệnh: pip install tensorflow opencv-python pillow numpy matplotlib 
 B7: chuyển đến thư mục mà bạn đã tải về bằng lệnh cd "đường dẫn đến thư mục mà bạn đã tải về"
     VD: cd "C:\Users\theta\OneDrive - nogdev\Desktop\Work\Python\mnist\repo_mnist"
 B8: Nhập lệnh: python.exe .\gui_digit_recognizer.py để chạy chương trình
+
+Link demo: https://share.streamlit.io/nogtai/predict-handwritten-digit/streamlit.py
