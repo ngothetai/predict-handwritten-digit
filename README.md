@@ -11,5 +11,6 @@ B7: chuyển đến thư mục mà bạn đã tải về bằng lệnh cd "đư�
 B8: Nhập lệnh: python.exe .\gui_digit_recognizer.py để chạy chương trình
 
 Link demo: https://share.streamlit.io/nogtai/predict-handwritten-digit/streamlit.py
+Website có thể bị dừng một thời gian sau khi khởi động nên bạn có thể liên hệ tôi để khởi động lại website demo
 
 ![Alt text](./image/web_demo.png "Demo website")
