@@ -13,3 +13,4 @@ B8: Nhập lệnh: python.exe .\gui_digit_recognizer.py để chạy chương tr
 Link demo: https://share.streamlit.io/nogtai/predict-handwritten-digit/streamlit.py
 
 ![Alt text](./image/web_demo.png "Demo website")
+![Alt text](./image/demo_test.png "Demo website")
