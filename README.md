@@ -14,7 +14,5 @@ Link demo: https://share.streamlit.io/nogtai/predict-handwritten-digit/streamlit
 Website có thể bị dừng một thời gian sau khi khởi động nên bạn có thể liên hệ tôi để khởi động lại website demo
 
 ![Alt text](./image/web_demo.png "Demo website")
-<<<<<<< HEAD
+
 ![Alt text](./image/demo_test.png "Demo website")
-=======
->>>>>>> 9024752b277d68ac088eb81ff0dc9d2fe1de7839
