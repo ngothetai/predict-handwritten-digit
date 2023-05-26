@@ -1,4 +1,4 @@
-Để chạy được chương trình trước tiên các bạn cần phải thiết đặt môi trường theo các bước sau:
+Để chạy được chương trình local trên thiết bị của bạn, trước tiên các bạn cần phải thiết đặt môi trường theo các bước sau:
 
 B1: Cài đặt anaconda (https://docs.anaconda.com/anaconda/install/windows/)
 B2: Sau khi đã cài đặt, các bạn mở anaconda powershell prompt
@@ -11,3 +11,5 @@ B7: chuyển đến thư mục mà bạn đã tải về bằng lệnh cd "đư�
 B8: Nhập lệnh: python.exe .\gui_digit_recognizer.py để chạy chương trình
 
 Link demo: https://share.streamlit.io/nogtai/predict-handwritten-digit/streamlit.py
+
+![Alt text](./image/web_demo.png "Demo website")
